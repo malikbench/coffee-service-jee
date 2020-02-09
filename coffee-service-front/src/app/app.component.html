@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand">
+    <a href="/"><img href="/" src="assets/imgs/machine.png" width="30" height="30" class="d-inline-block align-top"/></a>
+    EasyStock
+  </a>
+  <div class="navbar-nav mr-auto">
+    <li class="nav-item" *ngIf="isAdmin">
+      <a href="/admin" class="nav-link" >Admin Panel</a>
+    </li>
+  </div>
+  <div class="navbar-nav ml-auto" *ngIf="!currentUser">
+    <li class="nav-item">
+      <a href="/register" class="nav-link">
+        <span class="glyphicon glyphicon-user"></span> Sign Up
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/login" class="nav-link">
+        <span class="glyphicon glyphicon-log-in"></span> Login
+      </a>
+    </li>
+  </div>
+
+  <div class="navbar-nav ml-auto" *ngIf="currentUser">
+    <li class="nav-item">
+      <a href="/profile" class="nav-link">
+        <span class="glyphicon glyphicon-user"></span> Profile
+      </a>
+    </li>
+    <li class="nav-item">
+      <a (click)="logOut()" href="/" class="nav-link">
+        <span class="glyphicon glyphicon-log-in"></span> LogOut
+      </a>
+    </li>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+

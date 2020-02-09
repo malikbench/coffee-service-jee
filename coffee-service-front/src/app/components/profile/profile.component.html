@@ -1,0 +1,22 @@
+<div class="container">
+  <header class="jumbotron">
+    <h1 class="display-3">
+      Welcome <strong>{{currentUser.name}} </strong>
+      <span *ngIf="!isAdmin">, your username is <strong>{{currentUser.name}} </strong></span>
+    </h1>
+  </header>
+
+  <ul *ngIf="!isAdmin">
+    <li>
+      <button class="glyphicon glyphicon-pencil" (click)="editUser()"></button><span> Edit your information</span>
+    </li>
+    <li>
+      <button class="glyphicon glyphicon-lock" (click)="editPassword()"></button><span> Edit your password</span>
+    </li>
+  </ul>
+
+    <app-coffee-machine>
+    </app-coffee-machine>
+
+  
+</div>

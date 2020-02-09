@@ -1,0 +1,31 @@
+<h2 style="text-align: center;">Welcome Admin !</h2>
+<hr>
+<h3>Create User</h3>
+<div style="width: 400px; margin-left: 20px">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="newUser.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="newUser.username" name="username">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text" class="form-control" id="password"
+             [(ngModel)]="newUser.password"
+             name="password">
+    </div>
+
+    <button type="submit" class="btn btn-success" >Submit</button>
+  </form>
+</div>
+
